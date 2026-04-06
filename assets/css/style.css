@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*إعدادات المتغيرات والألوان */
+:root {
+    --primary-color: #008080; 
+    --secondary-color: #2c3e50;
+    --bg-color: #c9dbf5;
+    --card-bg: #ffffff;
+    --text-main: #333;
+    --text-muted: #666;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    direction: rtl; 
+    color: var(--text-main);
+}
+
+header {
+    background: var(--card-bg);
+    padding: 20px;
+    text-align: start;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+/*شريط التحكم (بحث، فلترة، إضافة) */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.box {
+    flex: 2;
+    min-width: 250px;
+}
+
+.box{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.box:focus {
+    border-color: var(--primary-color);
+}
+
+/*شبكة البطاقات (Grid) */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/*تصميم بطاقة الكتاب*/
+.book-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card h3 {
+    margin: 10px 0;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+.book-card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* شارات الحالة (متاح/غير متاح)*/
+.badge {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.available { background-color: #d4edda; color: var(--success); }
+.unavailable { background-color: #f8d7da; color: var(--danger); }
+
+[span_3](start_span)
+
+.location-tag {
+    background: #e9ecef;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    border-right: 4px solid var(--primary-color);
+}
+
+/* 6. الأزرار */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white; 
+    padding: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #006666; 
+}
+
+.btn-outline-danger {
+    background-color: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* 7. تذييل الصفحة (Footer) */
+.footer-info {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+/* تنسيق النافذة المنبثقة */
+.modal {
+    display: none; 
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px); 
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#bookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#bookForm h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.modal-actions {
+    /* display: flex; */
+    gap: 10px;
+    margin-top: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>نظام إدارة المكتبة الإلكترونية</h1>
+    </header>
+
+    <div class="controls">
+        <button id="openModalBtn" class="btn-primary">+ إضافة كتاب جديد</button>
+        <input type="text" id="searchInput" class="box" placeholder="بحث عن كتاب باسم أو مؤلف...">
+        <select id="categoryFilter" class = "box">
+            <option value="All">جميع الفئات</option>
+            <option value="روايات">روايات</option>
+            <option value="علوم">علوم</option>
+            <option value="تاريخ">تاريخ</option>
+        </select>
+    </div>
+
+    <div id="bookGrid" class="book-grid"></div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <h3>إضافة كتاب جديد</h3>
+            <form id="bookForm">
+                <input type="text" id="title" placeholder="عنوان الكتاب" required>
+                <input type="text" id="author" placeholder="اسم المؤلف" required>
+                <select id="category" required>
+                    <option value="تطوير ذات">تطوير ذات</option>
+                    <option value="علوم">علوم</option>
+                    <option value="اقتصاد">اقتصاد</option>
+                </select>
+                
+                <input type="text" id="locationCode" placeholder="رمز الموقع (مثلاً Shelf-A1)">
+                
+                <div class="modal-actions">
+                    <button type="submit" class="btn-success" id="save">حفظ</button>
+                    <button type="button" id="closeModalBtn" class="btn-danger">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
